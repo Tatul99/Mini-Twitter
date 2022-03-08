@@ -1,8 +1,8 @@
 <template>
   <div class="login-main">
     <div class="q-pa-md">
-      <div class="row">
-        <div class="image col fit row wrap justify-center items-center">
+      <div class="row row1">
+        <div class="image colfit row wrap justify-center items-center q-pt-xs">
           <div class="twitter-icon"></div>
         </div>
         <div class="container col fit row wrap justify-center items-center">
@@ -44,7 +44,7 @@
                     <path fill="none" d="M0 0h48v48H0z"></path>
                   </g>
                 </svg>
-                Sign up with Google</q-btn
+                Sign up with phone or email</q-btn
               >
               <q-btn
                 outline
@@ -56,22 +56,43 @@
               >
             </div>
             <div class="line row justify-center items-center">or</div>
-            <q-btn
-              unelevated
-              rounded
-              color="primary"
-              class="btn3 text-weight-bolder"
-              >Sign up with phone or email</q-btn
-            >
+          </div>
+          <div class="chenge-content">
+            <chenge-content />
           </div>
         </div>
+      </div>
+    </div>
+    <div class="fotter-text-div row justify-center">
+      <div class="fotter-text row wrap justify-center cursor-pointer">
+        <a href="">About</a>
+        <a href="">Help Center</a>
+        <a href="">Terms of Service</a>
+        <a href="">Privacy Policy</a>
+        <a href="">Cookie Policy</a>
+        <a href="">Accessibility</a>
+        <a href="">Ads info</a>
+        <a href="">Blog</a>
+        <a href="">Status</a>
+        <a href="">Careers</a>
+        <a href="">Brand Resources</a>
+        <a href="">Advertising</a>
+        <a href="">Marketing</a>
+        <a href="">Twitter for Business</a>
+        <a href="">Developers</a>
+        <a href="">Directory</a>
+        <a href="">Settings</a>
+        © 2022 Twitter, Inc.
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import ChengeContent from "./chenge-conteiner.vue";
+export default {
+  components: { ChengeContent },
+};
 </script>
 
 <style scoped>
@@ -81,12 +102,15 @@ export default {};
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 90vh;
+  width: 50%;
 }
-/* .container {
-  /* background-color: blueviolet; */
-/* } */
-.row {
-  height: 100vh;
+.container {
+  margin-left: 20px;
+  width: 50%;
+}
+.row1 {
+  min-height: 90vh;
 }
 .twitter-icon {
   /* -webkit-mask-image: url("../../public/twitter-white.png"); */
@@ -112,11 +136,12 @@ export default {};
 }
 .mini-icon-div {
   width: 90%;
+  margin-top: 60px;
 }
 .big-title {
   font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 48px;
-  margin-top: 48px;
+  margin-bottom: 58px;
+  margin-top: 68px;
 }
 .mini-title {
   margin-bottom: 32px;
@@ -172,9 +197,75 @@ export default {};
   height: 1px;
   background-color: rgb(29, 27, 27, 0.2);
 }
-.btn3 {
-  width: 400px;
-  height: 50px;
-  background-color: rgb(29, 155, 240) !important;
+
+.chenge-content {
+  width: 700px;
+}
+.fotter-text {
+  width: 1500px;
+  /* display: flex; */
+  /* justify-content: center;
+  flex-wrap: wrap; */
+  margin-bottom: 30px;
+}
+.fotter-text a {
+  font-size: 16px;
+  color: rgb(65, 63, 63);
+  text-decoration: unset;
+  margin-right: 15px;
+}
+.fotter-text a:hover {
+  text-decoration: underline;
+}
+.fotter-text-div {
+  width: 100%;
+}
+@media all and (max-width: 1265px) {
+  .twitter-icon {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media all and (max-width: 1080px) {
+  .buttons {
+    height: unset !important;
+  }
+  .row1 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .container {
+    margin-bottom: 50px;
+  }
+  .image {
+    width: 100%;
+    height: 50%;
+  }
+}
+@media all and (max-width: 600px) {
+  .big-title {
+    font-size: 40px;
+    margin-bottom: 0;
+  }
+  .mini-title {
+    font-size: 30px;
+  }
+  .btn1 {
+    width: 300px;
+  }
+  .mini-text {
+    width: 300px;
+  }
+  .btn2 {
+    width: 300px;
+  }
+
+  .line {
+    width: 300px;
+  }
+  .chenge-content {
+    width: 300px;
+  }
 }
 </style>
