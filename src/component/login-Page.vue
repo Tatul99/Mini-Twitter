@@ -58,7 +58,8 @@
             <div class="line row justify-center items-center">or</div>
           </div>
           <div class="chenge-content">
-            <chenge-content />
+            <chenge-content v-if="bool" @chengeBool="foo" />
+            <sign-in v-if="!bool" @chengeBool="foo" />
           </div>
         </div>
       </div>
@@ -90,8 +91,20 @@
 
 <script>
 import ChengeContent from "./chenge-conteiner.vue";
+import SignIn from "./SignIn.vue";
 export default {
-  components: { ChengeContent },
+  components: { ChengeContent, SignIn },
+  data() {
+    return {
+      bool: true,
+    };
+  },
+  methods: {
+    foo() {
+      // return this.bool != this.bool;
+      console.log((this.bool = !this.bool));
+    },
+  },
 };
 </script>
 

@@ -24,7 +24,12 @@
       <div class="zapros text-h5 text-weight-bolder">
         Already have an account?
       </div>
-      <q-btn outline rounded color="black" class="btn4 text-weight-bolder"
+      <q-btn
+        @click="$emit('chengeBool')"
+        outline
+        rounded
+        color="black"
+        class="btn4 text-weight-bolder text-blue-4"
         ><span>Sign In</span></q-btn
       >
     </div>
@@ -57,11 +62,11 @@ span {
 .btn4 {
   width: 400px;
   height: 50px;
-  color: rgb(29, 155, 240);
+  /* color: rgb(29, 155, 240); */
 }
-.btn4:hover {
+/* .btn4:hover {
   background-color: rgb(212, 249, 255) !important;
-}
+} */
 .sign-div {
   margin-top: 50px;
 }
