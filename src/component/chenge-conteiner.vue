@@ -1,6 +1,11 @@
 <template>
   <div class="compo-main">
-    <q-btn unelevated rounded color="primary" class="btn3 text-weight-bolder"
+    <q-btn
+      unelevated
+      rounded
+      color="primary"
+      class="btn3 text-weight-bolder"
+      @click="$emit('chengeSignUp')"
       >Sign up with phone or email</q-btn
     >
     <div class="mini-text">
@@ -20,8 +25,8 @@
         Cookie Use.</a
       >
     </div>
-    <div class="sign-div">
-      <div class="zapros text-h5 text-weight-bolder">
+    <div class="sign-div q-mt-md">
+      <div class="zapros text-h5 text-weight-bolder q-mb-sm">
         Already have an account?
       </div>
       <q-btn
@@ -62,17 +67,8 @@ span {
 .btn4 {
   width: 400px;
   height: 50px;
-  /* color: rgb(29, 155, 240); */
 }
-/* .btn4:hover {
-  background-color: rgb(212, 249, 255) !important;
-} */
-.sign-div {
-  margin-top: 50px;
-}
-.zapros {
-  margin-bottom: 15px;
-}
+
 @media all and (max-width: 600px) {
   .btn3 {
     width: 300px;

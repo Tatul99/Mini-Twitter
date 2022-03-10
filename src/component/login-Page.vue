@@ -78,9 +78,14 @@
               </div>
             </div>
             <div class="chenge-content">
-              <chenge-content v-if="bool" @chengeBool="foo" class="q-mb-md" />
-              <sign-in v-if="!bool" @chengeBool="foo" />
-              <registration />
+              <chenge-content
+                v-if="bool && bool2"
+                @chengeBool="foo"
+                @chengeSignUp="foo2"
+                class="q-mb-md"
+              />
+              <sign-in @chengeBool="foo" v-if="!bool" />
+              <registration v-if="!bool2" />
             </div>
           </div>
         </div>
@@ -127,12 +132,17 @@ export default {
   data() {
     return {
       bool: true,
+      bool2: true,
     };
   },
   methods: {
     foo() {
-      // return this.bool != this.bool;
+      return (this.bool = !this.bool);
       console.log((this.bool = !this.bool));
+    },
+    foo2() {
+      this.bool2 = !this.bool2;
+      console.log(this.bool2);
     },
   },
 };
