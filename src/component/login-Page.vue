@@ -85,7 +85,7 @@
                 class="q-mb-md"
               />
               <sign-in @chengeBool="foo" v-if="!bool" />
-              <registration v-if="!bool2" />
+              <registration v-if="!bool2" @chengeSignUp="foo2" />
             </div>
           </div>
         </div>

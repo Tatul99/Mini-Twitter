@@ -28,7 +28,11 @@
     >
       {{ bool ? "Use email instead" : "Use phone instead" }}
     </div>
-
+    <div class="col-9 col-md-12">
+      <span class="text-weight-bold"> Date of birth </span> <br />
+      will not be shown publicly. Confirm your own age, even if this account is
+      for a business, a pet, or something else.
+    </div>
     <q-input
       v-model="date"
       filled
@@ -36,6 +40,22 @@
       hint="Native date"
       class="col-9 col-md-12"
     ></q-input>
+    <q-btn
+      unelevated
+      rounded
+      :disable="!bool2"
+      color="black"
+      label="next"
+      class="col-9 col-md-12 q-mt-md"
+    ></q-btn>
+    <q-btn
+      @click="$emit('chengeSignUp')"
+      outline
+      rounded
+      color="black"
+      class="btn4 text-weight-bolder text-blue-4 col-9 col-md-12 q-mt-md"
+      ><span>Sign up</span></q-btn
+    >
   </div>
 </template>
 
@@ -43,6 +63,7 @@
 export default {
   data() {
     return {
+      bool2: false,
       date: "",
       bool: true,
       name: null,
@@ -56,6 +77,11 @@ export default {
           (val !== null && val !== "+" && val !== "") || "Please type your age",
       ],
     };
+  },
+  updated() {
+    if (this.date && this.name && this.age) {
+      this.bool2 = true;
+    }
   },
 };
 </script>
