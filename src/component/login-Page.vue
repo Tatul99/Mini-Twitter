@@ -21,13 +21,7 @@
               <div class="buttons column" style="width: 400px">
                 <div class="btn-div row fit items-center q-mb-lg">
                   <div class="btn1-div col-9 col-md-12 row">
-                    <q-btn
-                      outline
-                      rounded
-                      border-color="#dadce0"
-                      class="btn1 col-12"
-                      md
-                    >
+                    <q-btn outline rounded border-color="" class="btn1 col-12">
                       <svg
                         version="1.1"
                         xmlns="http://www.w3.org/2000/svg"
@@ -63,8 +57,8 @@
                     <q-btn
                       outline
                       rounded
-                      color="#dadce0"
-                      class="btn2 text-weight-bolder col-12"
+                      color="black"
+                      class="text-weight-bolder col-12"
                       ><div class="apple"></div>
                       Sign up with Apple</q-btn
                     >

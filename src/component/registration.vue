@@ -1,5 +1,5 @@
 <template>
-  <div class="row" style="width: 400px">
+  <div class="row" style="width: 400px" v-if="!StepTwobool">
     <q-input
       ref="nameRef"
       v-model="name"
@@ -47,6 +47,7 @@
       color="black"
       label="next"
       class="col-9 col-md-12 q-mt-md"
+      @click="StepTwobool = !StepTwobool"
     ></q-btn>
     <q-btn
       @click="$emit('chengeSignUp')"
@@ -57,10 +58,13 @@
       ><span>Sign up</span></q-btn
     >
   </div>
+  <step-two v-if="StepTwobool" @return="StepTwobool = false" />
 </template>
 
 <script>
+import StepTwo from "./registration-component/step-two.vue";
 export default {
+  components: { StepTwo },
   data() {
     return {
       bool2: false,
@@ -71,6 +75,7 @@ export default {
       model: null,
       age: null,
       ageRef: null,
+      StepTwobool: false,
       nameRules: [(val) => (val && val.length > 0) || "Please enter oure name"],
       ageRules: [
         (val) =>

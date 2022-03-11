@@ -3,3 +3,18 @@
     @content;
   }
 }
+@mixin sm {
+  @media (max-width: 1023) {
+    @content;
+  }
+}
+@mixin md {
+  @media (max-width: 1439) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (max-width: 1919) {
+    @content;
+  }
+}
