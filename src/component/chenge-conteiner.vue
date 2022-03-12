@@ -42,7 +42,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  emits: ["chengeSignUp"],
+};
 </script>
 
 <style scoped>

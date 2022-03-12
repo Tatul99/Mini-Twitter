@@ -11,21 +11,23 @@
       </div>
     </div>
     <step-two-info v-if="number2" />
+    <step-three v-if="number == 3" />
     <q-btn
       unelevated
       rounded
       color="black"
-      label="next"
+      :label="number == 3 ? 'Sing Up' : 'Next'"
       class="col-9 col-md-12 q-mt-md q-mb-md"
-      @click="(number += 1), (number2 = false)"
+      @click="gumar(), (number2 = false)"
     ></q-btn>
   </div>
 </template>
 
 <script>
 import stepTwoInfo from "./steptwo-info.vue";
+import stepThree from "./step-three.vue";
 export default {
-  components: { stepTwoInfo },
+  components: { stepTwoInfo, stepThree },
   data() {
     return {
       number: 2,
@@ -33,6 +35,11 @@ export default {
     };
   },
   methods: {
+    gumar() {
+      if (this.number < 3) {
+        this.number++;
+      }
+    },
     foo() {
       if (this.number == 2) {
         this.$emit("return");

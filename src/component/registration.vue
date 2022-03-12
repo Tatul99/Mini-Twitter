@@ -16,7 +16,7 @@
     <q-input
       ref="ageRef"
       outlined
-      v-model="age"
+      v-model="phone"
       :label="bool ? 'telephone' : 'Email'"
       lazy-rules
       :rules="ageRules"
@@ -54,7 +54,7 @@
       outline
       rounded
       color="black"
-      class="btn4 text-weight-bolder text-blue-4 col-9 col-md-12 q-mt-md"
+      class="btn4 text-weight-bolder text-blue-4 col-9 col-md-12 q-mt-md q-mb-lg"
       ><span>Sign up</span></q-btn
     >
   </div>
@@ -62,18 +62,19 @@
 </template>
 
 <script>
+import { computed } from "vue";
 import StepTwo from "./registration-component/step-two.vue";
 export default {
   components: { StepTwo },
+  emits: ["chengeSignUp"],
   data() {
     return {
-      bool2: false,
       date: "",
       bool: true,
-      name: null,
+      name: "Name",
       nameRef: null,
       model: null,
-      age: null,
+      phone: "+374569931",
       ageRef: null,
       StepTwobool: false,
       nameRules: [(val) => (val && val.length > 0) || "Please enter oure name"],
@@ -83,10 +84,17 @@ export default {
       ],
     };
   },
-  updated() {
-    if (this.date && this.name && this.age) {
-      this.bool2 = true;
-    }
+  computed: {
+    bool2() {
+      return !!(this.date && this.name && this.phone);
+    },
+  },
+  provide() {
+    return {
+      date: computed(() => this.date),
+      name: computed(() => this.name),
+      phone: computed(() => this.phone),
+    };
   },
 };
 </script>
